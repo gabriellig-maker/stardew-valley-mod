@@ -1,0 +1,56 @@
+WIKI STARDEW VALLEY — APENAS 3 PASTAS
+======================================
+
+Esta é a mesma wiki que você recebeu anteriormente, mas com a estrutura simplificada.
+Ela não exige Node.js nem banco de dados.
+
+ESTRUTURA:
+
+Wiki_Stardew_3_Pastas/
+    index.html               -> Página inicial: clique duas vezes para abrir
+    estilo/
+        estilo.css           -> Cores, fontes, bordas e aparência geral
+        editor.css           -> Aparência do editor visual
+    codigo/
+        conteudo.js          -> Nome da wiki, categorias, artigos e textos
+        imagens.js           -> Caminhos dos PNGs
+        wiki.js              -> Navegação, artigos e pesquisa
+        editor.js            -> Editor visual e exportação
+        iniciar.js           -> Inicialização
+        LEIA-ME.txt          -> Este manual
+    imagens/
+        fish.png, crop.png, ... -> 21 imagens separadas
+
+ABRIR O SITE:
+1. Extraia o arquivo ZIP inteiro.
+2. Abra index.html no Chrome, Edge ou Firefox.
+3. Use o botão "Editar wiki" para modificar artigos, categorias e título.
+
+COMO GUARDAR MUDANÇAS DO EDITOR:
+- Clique em "Baixar dados atualizados".
+- O navegador baixará um arquivo chamado conteudo.js.
+- Substitua codigo/conteudo.js pelo novo arquivo.
+- Quando publicar a wiki, envie index.html e as TRÊS pastas juntas.
+- Atenção: o editor guarda também um rascunho no navegador; para confirmar o
+  conteúdo do arquivo publicado, abra o site em uma janela anônima.
+
+EDITAR OS ARQUIVOS DIRETAMENTE:
+- Design: estilo/estilo.css.
+- Conteúdo: codigo/conteudo.js.
+- Funções e editor: codigo/*.js.
+- Imagens: substitua imagens/fish.png etc pelo seu desenho no mesmo nome.
+- Para criar "jundia.png", coloque em imagens/ e registre em codigo/imagens.js:
+      "jundia": "imagens/jundia.png"
+  Depois escolha a imagem "jundia" na página de edição do artigo.
+
+OBSERVAÇÃO SOBRE ENVIO DE IMAGENS PELO EDITOR:
+Imagens carregadas pelo botão de upload do editor são inseridas no arquivo
+conteudo.js como texto base64. Caso queira TODAS as imagens separadas, coloque
+os PNGs na pasta imagens/ e configure os caminhos em codigo/imagens.js.
+
+PUBLICAR:
+O index.html precisa continuar na raiz do site, ao lado das pastas estilo,
+codigo e imagens, para o servidor abrir a página inicial normalmente.
+
+Este é um projeto independente de fãs, sem afiliação oficial com Stardew Valley.
+Os artigos e sprites de exemplo não representam conteúdo real do seu mod.

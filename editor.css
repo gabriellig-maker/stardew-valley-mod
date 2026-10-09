@@ -1,0 +1,19 @@
+/* Aparência dos formulários e do editor visual. */
+.editor-nav{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 20px}.editor-nav a{padding:8px 11px;text-decoration:none;color:#42603e;background:#e4ebd4;border:1px solid #b1bc9a;font-size:12px;font-weight:bold}
+.editor-nav a:hover{background:#c6d9b8}.editor-box{background:#fffdf6;border:1px solid #d6c39e;padding:22px;margin:16px 0 22px;box-shadow:3px 4px 0 #dfd3b9}
+.editor-box h2{font:700 23px Georgia,serif;color:#6b4c31;margin:0 0 12px}.editor-box h3{font:700 18px Georgia,serif;color:#6b4c31}
+.editor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.editor-field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;min-width:0}
+.editor-field label{font-size:12px;font-weight:700;color:#62503b}.editor-field input,.editor-field select,.editor-field textarea{width:100%;min-width:0;padding:10px;background:#fffef9;border:1px solid #ae9670;color:#443529;font:13px/1.5 Verdana,sans-serif;border-radius:0}
+.editor-field small,.editor-hint{font-size:11px;color:#796b57;line-height:1.7}.editor-field textarea{resize:vertical}.editor-field.checkbox{flex-direction:row;align-items:center;gap:8px}.editor-field.checkbox input{width:auto}.editor-field.checkbox label{font-weight:normal}
+.editor-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:15px 0}.editor-btn{display:inline-flex;gap:6px;justify-content:center;align-items:center;min-height:39px;padding:9px 13px;border:2px solid #3c6038;background:#64834d;color:#fff;font-size:12px;font-weight:bold;text-decoration:none;box-shadow:2px 3px 0 #c2ad89;cursor:pointer}
+.editor-btn:hover{background:#496d3e;text-decoration:none;color:#fff}.editor-btn.alt{background:#f5e9cd;color:#604e37;border-color:#ae9069}.editor-btn.alt:hover{background:#ecdbb8}.editor-btn.danger{background:#f5e5df;color:#923b2a;border-color:#c07d69}.editor-btn.danger:hover{background:#edc8bd}
+.editor-list{border:1px solid #ddc8a5}.editor-row{display:flex;align-items:center;gap:12px;background:#fffdf6;border-bottom:1px solid #e5d6bb;padding:10px 12px}.editor-row:nth-child(even){background:#f7edda}.editor-row:last-child{border-bottom:0}.editor-row .pixel-sprite{width:33px;height:33px}.editor-row .info{flex:1;min-width:0}.editor-row .info strong{display:block}.editor-row .info small{color:#82745e;display:block;font-size:11px}
+.editor-note{background:#edf0da;border-left:4px solid #6d914f;padding:13px 16px;font-size:12px;margin:16px 0}.editor-warning{background:#fef1d8;border:1px solid #d6b277;color:#785028;padding:13px 16px;font-size:12px;margin:15px 0}
+.editor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.editor-stat{border:1px solid #d1bd98;background:#edf1dd;padding:14px}.editor-stat b{font:700 29px Georgia,serif;color:#436c41;display:block}.editor-stat small{color:#786c56;font-size:11px}
+.editor-sticky{position:sticky;bottom:0;z-index:3;background:#fff9e8ef;border-top:2px solid #b49c77;padding:12px 0;display:flex;flex-wrap:wrap;gap:10px}
+.editor-icon-preview{padding:12px;border:1px dashed #baa482;background:#f6f0e1}.editor-icon-preview .pixel-sprite{vertical-align:middle}
+.editor-toast{position:fixed;z-index:100;bottom:20px;right:20px;background:#365b42;color:white;padding:12px 18px;border:2px solid #bdd4b1;box-shadow:4px 4px 0 #614b33;max-width:400px;font-size:12px;font-weight:bold}.editor-toast[hidden]{display:none}
+@media(max-width:900px){.editor-grid{grid-template-columns:1fr}.editor-box{padding:15px}.editor-row{flex-wrap:wrap}}
+@media(max-width:520px){.editor-stats{grid-template-columns:1fr}.editor-actions{align-items:stretch}.editor-btn{flex:1}}
+
+
