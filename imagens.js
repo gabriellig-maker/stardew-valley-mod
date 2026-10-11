@@ -1,4 +1,4 @@
-// Caminhos das imagens. Para trocar um sprite, substitua o arquivo na pasta imagens/sprites.
+// Caminhos das imagens. Para trocar um sprite, substitua o arquivo na pasta imagens.
 window.WIKI_IMAGENS = {
   "owl": "imagens/owl.png",
   "crop": "imagens/crop.png",

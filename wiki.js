@@ -27,7 +27,7 @@ function buildSidebar(){
   const html=`<div class="side-top">${img('star','mini')} <span>Explorar a wiki</span></div>
   <div class="side-section">${item('Página inicial','#/wiki','house')}${item('Índice A–Z','#/indice','book')}${item('Pesquisa avançada','#/busca','search')}</div>
   ${groups.map(group=>`<div class="side-section"><div class="side-heading">${esc(group)}</div>${categories.filter(c=>c.group===group).map(c=>item(c.label,categoryHref(c.slug),c.icon)).join('')}</div>`).join('')}
-  <div class="side-section"><div class="side-heading">Sobre o projeto</div>${item('✎ Editar wiki','#/editar','tool')}${item('Como editar','#/ajuda','book')}${item('Créditos','#/sobre-preview','star')}</div>
+  <div class="side-section"><div class="side-heading">Sobre o projeto</div>${item('Créditos','#/sobre-preview','star')}</div>
   <div class="side-bottom">✦ Sua wiki, do seu jeito ✦</div>`;
   document.getElementById('wiki-sidebar').innerHTML=html;
 }
@@ -40,7 +40,7 @@ function home(){
   <div class="category-grid">${featured.map(c=>`<a href="${categoryHref(c.slug)}" class="category-card">${img(c.icon)}<span>${esc(c.label)}</span><small>Ver categoria →</small></a>`).join('')}</div>
   <div class="home-columns"><section><div class="section-line"><h2>Descubra na wiki</h2><span>Artigos em destaque</span></div><div class="feature-list">${recommended.map(p=>`<a class="feature-row" href="${articleHref(p)}">${img(p.spriteName)}<span><strong>${esc(p.title)}</strong><small>${esc(p.description)}</small></span><b aria-hidden="true">›</b></a>`).join('')}</div></section><section><div class="section-line"><h2>Comece por aqui</h2></div><div class="guide-card"><span class="guide-eyebrow">GUIA DO VIAJANTE</span>${img('scroll','xl')}<h3>Novidades no vale?</h3><p>Conheça os personagens, veja itens e descubra os recursos que sua wiki poderá apresentar.</p><a class="wood-button" href="#/sobre-preview">Conhecer a prévia <span>→</span></a></div></section></div>
   <div class="section-line"><h2>Artigos recentes</h2><a href="#/indice">Ver todas as páginas →</a></div><div class="updates-list">${pages.slice(0,6).map(p=>`<a href="${articleHref(p)}">${img(p.spriteName,'tiny')}<span>${esc(p.title)}</span><small>${esc(catName(p.type))}</small></a>`).join('')}</div>
-  <div class="notice-help"><strong>Esta versão pode ser editada!</strong> Use o <a href="#/editar">editor HTML</a> para criar ou alterar artigos e exportar seus dados atualizados.</div>`;
+  <div class="notice-help"><strong>Um mundo para descobrir.</strong> Explore os artigos, consulte as categorias e acompanhe as novidades publicadas nesta wiki.</div>`;
 }
 function categoryPage(id){
   const c=categories.find(x=>x.slug===id);
@@ -85,7 +85,7 @@ function articlePage(id){
  const headings=[...String(p.content||'').matchAll(/^#{2,3}\s+(.+)$/gm)].map(m=>m[1]);
  const fields=Object.entries(p.fields||{});
  return `${breadcrumb(p.title,p.type==='personagens'?'Personagem':catName(p.type),`<a href="${categoryHref(p.type)}">${esc(catName(p.type))}</a> <span>›</span> ${esc(p.title)}`)}
- <div class="article-actions"><span>${badge(p)}</span><a class="article-edit-link" href="#/editar/artigo/${encodeURIComponent(p.id)}">✎ Editar artigo</a></div>
+ <div class="article-actions"><span>${badge(p)}</span></div>
  <div class="article-layout"><article class="wiki-article"><p class="article-summary">${esc(p.description)}</p>
  ${headings.length>=2?`<nav class="table-contents" aria-label="Índice"><strong>Nesta página</strong><ol>${headings.map(h=>`<li><a href="#" data-jump="h-${slug(h)}">${esc(h)}</a></li>`).join('')}</ol></nav>`:''}
  ${renderMd(p.content)}
@@ -99,7 +99,7 @@ function searchPage(q=''){
  return `${breadcrumb('Pesquisa',q?`Resultados para “${q}”`:'Encontre artigos, personagens e lugares')}<form class="search-main" id="advanced-form" role="search"><label class="sr-only" for="full-query">Pesquisar conteúdo</label><input id="full-query" value="${esc(q)}" name="q" placeholder="Procure por um item, personagem, cultivo..." autocomplete="off"><button class="wood-button">Pesquisar</button></form>
  ${q?`<p class="results-count">${matches.length} resultado(s) encontrado(s).</p>${matches.length?`<div class="article-index">${matches.map(p=>`<a href="${articleHref(p)}">${img(p.spriteName)}<span><strong>${esc(p.title)}</strong><small>${esc(p.description)}</small></span><span class="type-chip">${esc(catName(p.type))}</span></a>`).join('')}</div>`:`<div class="empty-state">Nenhum artigo encontrado. Experimente outra palavra ou consulte o <a href="#/indice">índice completo</a>.</div>`}`:'<p>Digite o nome de um personagem, cultivo ou item. A busca também encontra descrições e categorias.</p>'}`;
 }
-function about(){return `${breadcrumb('Sobre esta wiki','Projeto independente em HTML puro.')}<div class="guide-preview"><h3>Personalize seu mod</h3><p>Clique em <a href="#/editar">Editar wiki</a> para alterar tudo e baixar o arquivo HTML atualizado. O conteúdo inicial é fictício e foi incluído somente para demonstração.</p><h3>Independência</h3><p>Este é um projeto de fãs, sem afiliação oficial com Stardew Valley.</p></div>`}
+function about(){return `${breadcrumb('Sobre esta wiki','Projeto independente em HTML puro.')}<div class="guide-preview"><h3>Personalize seu mod</h3><p>Este site reúne informações do mod e será atualizado pelo autor. Alguns conteúdos iniciais são exemplos fictícios usados apenas para demonstração.</p><h3>Independência</h3><p>Este é um projeto de fãs, sem afiliação oficial com Stardew Valley.</p></div>`}
 function missing(){return `${breadcrumb('Página não encontrada','Esta trilha ainda não foi explorada.')}<div class="empty-state">${img('map','xl')}<p>A página solicitada não existe nesta prévia.</p><a href="#/wiki" class="wood-button">Voltar para o início →</a></div>`}
 function display(){
  const hash=decodeURIComponent(location.hash.replace(/^#/,'')||'/wiki');const path=hash.split('?')[0];const main=document.getElementById('conteudo');
@@ -109,12 +109,6 @@ function display(){
  else if(path.startsWith('/artigo/')){const id=path.split('/')[2];title=byId.get(id)?.title||'Artigo';view=articlePage(id)}
  else if(path==='/indice'){title='Índice A–Z';view=indexPage()}
  else if(path==='/busca'){title='Pesquisa';const params=new URLSearchParams(hash.slice(path.length+1));view=searchPage(params.get('q')||'')}
- else if(path==='/editar'){title='Editor';view=editorDashboard()}
- else if(path==='/editar/configuracoes'){title='Configurações';view=editorSettings()}
- else if(path==='/editar/novo'){title='Novo artigo';view=editorArticle()}
- else if(path.startsWith('/editar/artigo/')){title='Editar artigo';view=editorArticle(path.split('/')[3])}
- else if(path==='/editar/categorias'){title='Categorias';view=editorCategories()}
- else if(path==='/ajuda'){title='Ajuda';view=editorHelp()}
  else if(path==='/sobre-preview'){title='Sobre';view=about()}
  else{title='Página não encontrada';view=missing()}
  document.title=`${title} — ${database.settings.title} Wiki`;

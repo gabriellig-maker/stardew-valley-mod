@@ -1,11 +1,11 @@
 // DADOS EDITÁVEIS DA WIKI
-// Artigos, categorias e textos. Você também pode editar pelo painel da página.
+// Artigos, categorias e textos. Edite este arquivo na sua cópia privada antes de publicar no GitHub.
 window.WIKI_DADOS = {
   "settings": {
-    "title": "Vale das Estrelas",
+    "title": "Vale das Araucárias",
     "subtitle": "A enciclopédia do seu mundo de Stardew Valley.",
     "introTitle": "Um novo vale para descobrir!",
-    "intro": "Explore personagens, cultivos, peixes, locais e segredos. Personalize este texto no editor. Os exemplos iniciais são fictícios.",
+    "intro": "Explore personagens, cultivos, peixes, locais e segredos. Os exemplos iniciais são fictícios.",
     "version": "0.1.0",
     "tagline": "WIKI • ENCICLOPÉDIA"
   },
@@ -278,7 +278,7 @@ window.WIKI_DADOS = {
       "description": "Uma floresta serena, onde a névoa cobre as trilhas ao amanhecer.",
       "sprite": "/assets/tree.png",
       "fields": {
-        "Região": "Vale das Estrelas",
+        "Região": "Vale das Araucárias",
         "Acesso": "Após a missão inicial",
         "Horário": "Livre",
         "Personagens": "Lia",
@@ -501,7 +501,7 @@ window.WIKI_DADOS = {
         "Versão": "0.1.0-demo"
       },
       "related": [],
-      "content": "## Bem-vindo\nEsta é uma wiki independente criada para documentar **seu mod de Stardew Valley**. Tudo o que está marcado como demonstrativo serve apenas para apresentar o sistema.\n\n## Personalização\nAltere o nome do projeto no arquivo de configuração, substitua os sprites e edite os artigos pelo painel administrativo.\n\n## Licenças\nA wiki não é afiliada ao ConcernedApe nem à Stardew Valley Wiki oficial."
+      "content": "## Bem-vindo\nEsta é uma wiki independente criada para documentar **seu mod de Stardew Valley**. Tudo o que está marcado como demonstrativo serve apenas para apresentar o sistema.\n\n## Personalização\nO conteúdo é mantido e atualizado pela equipe responsável pelo mod.\n\n## Licenças\nA wiki não é afiliada ao ConcernedApe nem à Stardew Valley Wiki oficial."
     },
     {
       "id": "info-instalar",
